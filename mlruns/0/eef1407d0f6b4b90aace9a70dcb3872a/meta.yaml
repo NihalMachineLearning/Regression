@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/NIHAL/Documents/Internship/mlruns/0/eef1407d0f6b4b90aace9a70dcb3872a/artifacts
+end_time: 1698651964971
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eef1407d0f6b4b90aace9a70dcb3872a
+run_name: mysterious-perch-17
+run_uuid: eef1407d0f6b4b90aace9a70dcb3872a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698651964871
+status: 4
+tags: []
+user_id: NIHAL
