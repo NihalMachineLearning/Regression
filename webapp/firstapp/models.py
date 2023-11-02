@@ -6,7 +6,7 @@ class internship(models.Model):
     age = models.FloatField()
     sex = models.FloatField()
     bmi = models.FloatField()
-    childrens = models.FloatField()
+    children = models.FloatField()
     smoker = models.FloatField()
     region = models.FloatField()
     charges = models.FloatField()
