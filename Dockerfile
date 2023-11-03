@@ -18,11 +18,11 @@ RUN /py/bin/pip install -r /requirements_docker.txt
 
 RUN python -m pip install --upgrade pip
 
-RUN apk add --update --no-cache --virtual linux-headers
+#RUN apk add --update --no-cache --virtual linux-headers
 
 #RUN adduser --disable-password --no-create-home webapp
 
-#ENV PATH="/py/bin:$PATH"
+ENV PATH="/py/bin:$PATH"
 
 #USER app
 
