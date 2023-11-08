@@ -5,8 +5,7 @@ services:
     build:
       context: .
     command: >
-      sh -c "
-             python manage.py migrate &&
+      sh -c "python manage.py migrate &&
              python manage.py createsuperuser &&
              python manage.py runserver 0.0.0.0:8000"
 
@@ -19,7 +18,7 @@ services:
     environment:
       - SECRET_KEY=devsecretkey
       - DEBUG=1
-      - DB_HOST =db
+      - DB_HOST=db
       - DB_NAME=devdb
       - DB_USER=devuser
       - DB_PASS=changeme
@@ -34,7 +33,48 @@ services:
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
-      - POSTGRES_PASSWOD=changeme
+      - POSTGRES_PASSWORD=changeme
 
     ports:
       - "5432:5432"
+
+    volumes:
+      - data:/var/lib/postgresql/data
+    
+    #networks:
+    #  - postgres-pgadmin
+
+  pg-admin:
+    image: dpage/pgadmin4:6
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=5050
+
+    ports:
+      - "5050:5050"
+volumes:
+  data:
+  
+  
+  
+  #pgadmin:
+    #container_name: pgadmin4_container
+    #image: dpage/pgadmin4
+    #restart: always
+    #environment:
+    #  pgadmin_default_email: tanzeem.agra@gmail.com
+    #  pgadmin_default_password: root
+    #ports:
+    #  - "5050:80"
+    #volumes:
+    #  - pgadmin-data:/var/lib/pgadmin
+    #networks:
+    #  - postgres-pgadmin
+  
+  #networks:
+  #  postgres-pgadmin:
+
+  #volumes:
+  #  local_pgdata:
+  #  pgadmin-data:
